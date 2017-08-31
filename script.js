@@ -190,12 +190,13 @@ function handleStart() {
 // Then, just calls the updateNode function with both the doms
 function handleReload() {
   var newdom = JSON.parse(JSON.stringify(vdom));
+  var random_name = data[Math.floor(Math.random()*data.length)];
   // newdom.children.push({
   //   type: 'p',
   //   children: [ 'How are you?' ]
   // });
   // newdom.children.splice(0, 1);
-  newdom.children[1].children[0] = 'Nishant!';
+  newdom.children[1].children[0] = random_name;
   var root = document.getElementById('app');
   updateNode(root, vdom, newdom);
 }
